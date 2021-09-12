@@ -2,4 +2,6 @@
 
 Algorithms in JavaScript
 
--Fibonacci Sequence
+9/12:
+-Added Fibonacci sequence
+
