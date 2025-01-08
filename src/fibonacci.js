@@ -14,10 +14,9 @@ function fibonacci(max) {
   }
   
   function writeItOut(data) {
-    console.log(data);
-    document.getElementById("fibonacci").innerHTML += `${data} `;
+    //console.log(data);
+    document.getElementById("test").innerHTML += `${data} `;
   }
   
   fibonacci(20);
-  // TODO
-  // refactor to get rid of the "for" loop
+  
