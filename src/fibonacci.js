@@ -14,9 +14,7 @@ function fibonacci(max) {
   }
   
   function printOutput(data) {
-    //console.log(data);
-    document.getElementById("output").innerHTML += `${data} `;
+    document.getElementById("fibonacci").innerHTML += `${data} `;
   }
   
   fibonacci(20);
-  
