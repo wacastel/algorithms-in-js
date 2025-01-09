@@ -9,13 +9,13 @@ function fibonacci(max) {
       result = nMinusOne + nMinusTwo;
       nMinusTwo = nMinusOne;
       nMinusOne = result;
-      writeItOut(result);
+      printOutput(result);
     }
   }
   
-  function writeItOut(data) {
+  function printOutput(data) {
     //console.log(data);
-    document.getElementById("test").innerHTML += `${data} `;
+    document.getElementById("output").innerHTML += `${data} `;
   }
   
   fibonacci(20);
