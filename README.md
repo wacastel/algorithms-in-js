@@ -15,3 +15,6 @@ http://localhost:8080/
 
 9/12:
 -Added Fibonacci sequence
+
+1/31:
+-Added factors and multiples algorithms
