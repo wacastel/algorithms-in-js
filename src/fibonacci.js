@@ -17,4 +17,4 @@ function fibonacci(max) {
     document.getElementById("fibonacci").innerHTML += `${data} `;
   }
   
-  fibonacci(20);
+  //fibonacci(20);
