@@ -18,3 +18,6 @@ http://localhost:8080/
 
 1/31:
 -Added factors and multiples algorithms
+
+3/12:
+-Added binary tree traversal algorithms

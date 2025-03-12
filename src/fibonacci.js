@@ -9,12 +9,14 @@ function fibonacci(max) {
       result = nMinusOne + nMinusTwo;
       nMinusTwo = nMinusOne;
       nMinusOne = result;
-      printOutput(result);
+      printOutput(result, max);
     }
   }
   
-  function printOutput(data) {
+  function printOutput(data, input) {
     document.getElementById("fibonacci").innerHTML += `${data} `;
   }
   
-  //fibonacci(20);
+  const input = 20;
+  document.getElementById('fibonacci').innerHTML += `Fibonacci [n=${input}]: `;
+  fibonacci(input);
