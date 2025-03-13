@@ -13,11 +13,14 @@ Notes:
 Go to chrome and load the page:
 http://localhost:8080/
 
-9/12:
+9/12/24:
 -Added Fibonacci sequence
 
-1/31:
+1/31/25:
 -Added factors and multiples algorithms
 
-3/12:
+3/12/25:
 -Added binary tree traversal algorithms
+
+3/13/25:
+-Added function to print binary tree in ASCII format
