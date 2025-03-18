@@ -124,7 +124,7 @@ printInorder(root);
 
 const result = levelOrderTraversal(root);
 console.log('level order traversal result: ', result);
-document.getElementById('level-order-traversal').innerHTML += 'Level Order Traversal: ';
+document.getElementById('level-order-traversal').innerHTML = 'Level Order Traversal: ';
 document.getElementById('level-order-traversal').innerHTML += `${result}`;
 print2DArray(result);
 
