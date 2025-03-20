@@ -26,4 +26,7 @@ http://localhost:8080/
 -Added function to print binary tree in ASCII format
 
 3/18/25:
--Added letter toggle (A/B)
+-Added letter toggle
+
+3/20/25:
+-Added combination lock
