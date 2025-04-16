@@ -36,6 +36,27 @@ class TreeNode {
         }
       }
     }
+
+    contains(value, node = this.root) {
+      if (value == node.value) {
+        console.log('tree contains value ', value);
+        return true;
+      } else if (value < node.value) {
+          if (node.left === null) {
+            console.log('sorry! tree does not contain value ', value);
+            return false;
+          } else {
+            return this.contains(value, node.left);
+          }
+      } else {
+        if (node.right === null) {
+          console.log('sorry! tree does not contain value ', value);
+          return false;
+        } else {
+          return this.contains(value, node.right);
+        }
+      }
+    }
   
     // In-order traversal to see the tree in sorted order
     inOrderTraversal(node = this.root) {
@@ -59,4 +80,5 @@ class TreeNode {
   
   console.log("In-order Traversal:");
   tree.inOrderTraversal();
-  
+  tree.contains(15);
+  tree.contains(16);
