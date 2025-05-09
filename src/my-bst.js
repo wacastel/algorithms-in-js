@@ -16,7 +16,7 @@ function levelOrderTraversal(root) {
         let currentLevel = [];
         let levelSize = queue.length;
         for (let i = 0; i < levelSize; i++) {
-            currentNode = queue.shift();
+            let currentNode = queue.shift();
             currentLevel.push(currentNode.data);
             if (currentNode.left) {
                 queue.push(currentNode.left);
