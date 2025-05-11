@@ -37,10 +37,14 @@ function topView(node) {
     }
     let queue = [[root, 0]];
     let viewMap = new Map();
+    let minHD = 0, maxHD = 0;
+    let result = [];
     while (queue.length > 0) {
         let [currentNode, horizDist] = queue.shift();
         if (!viewMap.has(horizDist)) {
             viewMap.set(horizDist, currentNode.data);
+            minHD = Math.min(minHD, horizDist);
+            maxHD = Math.max(maxHD, horizDist);
         }
 
         if (currentNode.left) {
@@ -51,7 +55,9 @@ function topView(node) {
         }
     }
     // note: we need to sort this by keys (horizontal distances)
-    let result = viewMap.keys().sort((a, b) => a - b);
+    for (let i = minHD; i <= maxHD; i++){
+        result.push(viewMap.get(i));
+    }
     return result;
 }
 
