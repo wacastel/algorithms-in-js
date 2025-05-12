@@ -6,7 +6,7 @@ class Node {
     }
 }
 
-function levelOrderTraversal(node) {
+function levelOrderTraversal(root) {
     if (!root) {
         return [];
     }
@@ -61,6 +61,31 @@ function topView(node) {
     return result;
 }
 
+function insert(root, value) {
+    if (!root) {
+        return new Node(value);
+    }
+    console.log('inserting ', value, ' value into tree');
+    let currentNode = root;
+    while (true) {
+        if (value < currentNode.data) {
+            if (currentNode.left === null) {
+                currentNode.left = new Node(value);
+                return root;
+            }
+            currentNode = currentNode.left;
+        } else if (value > currentNode.data) {
+            if (currentNode.right === null) {
+                currentNode.right = new Node(value);
+                return root;
+            }
+            currentNode = currentNode.right;
+        } else {
+            return root;
+        }
+    }
+}
+
 const root = new Node(1);
 root.left = new Node(2);
 root.right = new Node(3);
@@ -72,3 +97,14 @@ const result = levelOrderTraversal(root);
 const topViewResult = topView(root);
 console.log(result);
 console.log(topViewResult); // 4 2 1 3 6
+
+let tree = insert(null, 10);
+tree = insert(tree, 5);
+tree = insert(tree, 15);
+tree = insert(tree, 3);
+tree = insert(tree, 7);
+tree = insert(tree, 13);
+tree = insert(tree, 20);
+console.log('tree: ', tree);
+treeResult = levelOrderTraversal(tree);
+console.log(treeResult);
