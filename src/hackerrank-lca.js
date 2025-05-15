@@ -1,11 +1,3 @@
-class Node {
-    constructor(data) {
-        this.data = data;
-        this.left = null;
-        this.right = null;
-    }
-}
-
 var Tree = function() {
     this.root = null;
 }
@@ -24,10 +16,28 @@ Tree.prototype.insert = function(node, data) {
     return node;
 }
 
+var Node = function(data) {
+    this.data = data;
+    this.left = null;
+    this.right = null;
+}
+
+/* head ends */
+
+process.stdin.resume();
+process.stdin.setEncoding("ascii");
+var input = "";
+process.stdin.on("data", function (chunk) {
+    input += chunk;
+});
+process.stdin.on("end", function () {
+    // now we can read/parse input
+});
+
 function ancestors(root, target) {
     let results = [];
     let currentNode = root;
-    if (target === root.data) {
+    if (target == root.data) {
         results.push(root.data);
     }
     while (currentNode) {
@@ -63,11 +73,7 @@ function lowestCommonNumber(arr1, arr2) {
 
 function lca(root, v1, v2) {
     let results1 = ancestors(root, v1);
-    console.log("The ancestors of ", v1, " are: ");
-    console.log(results1);
     let results2 = ancestors(root, v2);
-    console.log("The ancestors of ", v2, " are: ");
-    console.log(results2);
     let lca;
     if (results2.includes(v1)) {
         lca = v1;
@@ -81,38 +87,38 @@ function lca(root, v1, v2) {
     console.log(lca);
 }
 
-/*let root = new Node(10);
-root.left = new Node(5);
-root.right = new Node(15);
-root.left.left = new Node(2);
-root.left.right = new Node(7);
-root.right.left = new Node(12);
-root.right.right = new Node(20);
+/* tail begins */
 
-let root = new Node(1);
-root.right = new Node(2);
+process.stdin.resume();
+process.stdin.setEncoding('ascii');
 
-let target1 = 1;
-let results1 = ancestors(root, target1);
-let target2 = (2);
-let results2 = ancestors(root, target2);
-console.log("The ancestors of ", target1, " are: ");
-console.log(results1);
-console.log("The ancestors of ", target2, " are: ");
-console.log(results2);
-let result = lowestCommonNumber(results1, results2)
-console.log("LCA: ", result);*/
+var _stdin = "";
+var _stdin_array = "";
+var _currentline = 0;
 
-//let m = [9, 7, 8, 5, 6, 4, 3, 1];
-//let v1 = 1;
-//let v2 = 6;
+process.stdin.on('data', function(data) {
+    _stdin += data;
+});
 
-let m = [8, 6, 5, 7, 11, 12, 13, 10, 9];
-let v1 = 9;
-let v2 = 12;
-var tree = new Tree();
-for (var i=0; i<m.length; i++) {
-    tree.root = tree.insert(tree.root, m[i]);
+process.stdin.on('end', function() {
+    _stdin_array = _stdin.split("\n");
+    solution();
+});
+
+function readLine() {
+    return _stdin_array[_currentline++];
 }
-console.log(tree.root);
-lca(tree.root, v1, v2);
+
+function solution() {
+
+    var tree = new Tree();
+    var n = parseInt(readLine());
+    var m = readLine().split(" ").map(Number);
+    var p = readLine().split(" ").map(Number);
+    var v1 = p[0];
+    var v2 = p[1];
+    for (var i=0; i<n; i++) {
+        tree.root = tree.insert(tree.root, m[i]);
+    }
+    lca(tree.root, v1, v2);
+}
